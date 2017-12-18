@@ -11,6 +11,7 @@ import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
 import NumberPeople from "./NumberPeople";
 import TimePicker from "./TimePicker";
 import MenuPicker from "./FoodMenu";
+import Location from "./map.js";
 
 class App extends Component {
   render() {
@@ -34,6 +35,7 @@ class App extends Component {
           <h2 id="menu">Menu</h2>
           <MenuPicker />
         </MuiThemeProvider>
+        <Location />
       </div>
     );
   }
