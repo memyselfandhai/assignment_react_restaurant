@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 const contact = () => {
   return (
-    <form action="/users" method="post">
+    <form id="contact" action="/users" method="post">
       <div class="form-group">
         <input
           type="text"

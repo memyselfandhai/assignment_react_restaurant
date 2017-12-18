@@ -1,15 +1,15 @@
 import React, { Component } from "react";
 
 const Item = ({ title }) => {
+  const link = "#" + title.toLowerCase();
   return (
     <li>
-      <a href="#">{title}</a>
+      <a href={link}>{title}</a>
     </li>
   );
 };
 
 const MenuItems = ({ items }) => {
-  console.log(items);
   return (
     <ul className="nav navbar-nav">
       {items.map(item => <Item title={item} />)}
@@ -25,7 +25,7 @@ const Menu = () => {
           <a className="navbar-brand" href="#">
             hai.restaurant.io
           </a>
-          <MenuItems items={["Home", "Menu", "Contact"]} />
+          <MenuItems items={["Home", "Menu", "Reservation", "Contact"]} />
         </div>
       </div>
     </nav>
