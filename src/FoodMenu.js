@@ -1,21 +1,19 @@
-import React from "react";
-import DropDownMenu from "material-ui/DropDownMenu";
-import MenuItem from "material-ui/MenuItem";
-import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
-var faker = require("faker");
+import React from 'react';
+import DropDownMenu from 'material-ui/DropDownMenu';
+import MenuItem from 'material-ui/MenuItem';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+//import faker from 'faker';
 
-const styles = {
-  customWidth: {
-    width: 200
-  }
+const FoodMenuItems = ({ foodItems }) => {
+  return (
+    <div>
+      <p>{foodItems.name}</p>
+      <p>{foodItems.description}</p>
+      <p>${foodItems.price}</p>
+      <p>***</p>
+    </div>
+  );
 };
-
-for (let i=0; i<10; i++)  {
-<p>${faker.random.number()}</p>
-<p>{faker.lorem.word()}</p>
-<p>{faker.lorem.sentence()}</p>
-<p>***</p>}
-
 
 export default class DropDownMenuSimpleExample extends React.Component {
   constructor(props) {
@@ -29,12 +27,31 @@ export default class DropDownMenuSimpleExample extends React.Component {
     return (
       <div>
         <DropDownMenu value={this.state.value} onChange={this.handleChange}>
-          <MenuItem value={1} primaryText="Chef's Choice" />
-          <MenuItem value={2} primaryText="Dinner" />
-          <MenuItem value={3} primaryText="Drink" />
+          <FoodMenuItems
+            foodItems={[
+              { name: 'Filet', price: 50, description: 'lorem' },
+              { name: 'Lobster', price: 50, description: 'lorem' },
+              { name: 'Caviar', price: 100, description: 'lorem' }
+            ]}
+            primaryText="Chef's Choice"
+          />
+          <FoodMenuItems
+            foodItems={[
+              { name: 'Shrimp', price: 50, description: 'lorem' },
+              { name: 'Rice', price: 50, description: 'lorem' },
+              { name: 'Chicken', price: 100, description: 'lorem' }
+            ]}
+            primaryText="Dinner"
+          />
+          <FoodMenuItems
+            foodItems={[
+              { name: 'Beer', price: 50, description: 'lorem' },
+              { name: 'Wine', price: 50, description: 'lorem' },
+              { name: 'OJ', price: 100, description: 'lorem' }
+            ]}
+            primaryText="Drink"
+          />
         </DropDownMenu>
-
-
       </div>
     );
   }
