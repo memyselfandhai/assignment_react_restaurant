@@ -1,7 +1,7 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
 const Item = ({ title }) => {
-  const link = "#" + title.toLowerCase();
+  const link = '#' + title.toLowerCase();
   return (
     <li>
       <a href={link}>{title}</a>
@@ -25,7 +25,7 @@ const Menu = () => {
           <a className="navbar-brand" href="#">
             hai.restaurant.io
           </a>
-          <MenuItems items={["Home", "Menu", "Reservation", "Contact"]} />
+          <MenuItems items={['Home', 'Menu', 'Reservation', 'Contact']} />
         </div>
       </div>
     </nav>
