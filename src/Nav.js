@@ -1,31 +1,35 @@
 import React, { Component } from "react";
 
-const nav = () => {
+const Item = ({ title }) => {
   return (
-    <nav class="navbar navbar-default">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <a class="navbar-brand" href="#">
+    <li>
+      <a href="#">{title}</a>
+    </li>
+  );
+};
+
+const MenuItems = ({ items }) => {
+  console.log(items);
+  return (
+    <ul className="nav navbar-nav">
+      {items.map(item => <Item title={item} />)}
+    </ul>
+  );
+};
+
+const Menu = () => {
+  return (
+    <nav className="navbar navbar-default">
+      <div className="container-fluid">
+        <div className="navbar-header">
+          <a className="navbar-brand" href="#">
             hai.restaurant.io
           </a>
+          <MenuItems items={["Home", "Menu", "Contact"]} />
         </div>
-        <ul class="nav navbar-nav">
-          <li class="active">
-            <a href="#">Welcome</a>
-          </li>
-          <li>
-            <a href="#">Menu</a>
-          </li>
-          <li>
-            <a href="#">Reservations</a>
-          </li>
-          <li>
-            <a href="#">Conact</a>
-          </li>
-        </ul>
       </div>
     </nav>
   );
 };
 
-export default nav;
+export default Menu;
